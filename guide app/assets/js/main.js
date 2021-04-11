@@ -11,7 +11,7 @@ const app = Vue.createApp({
             textForth: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum asperiores praesentium.",
             textFifth: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
 
-            stageFirst: "Donwload bios",
+            stageFirst: "Download bios",
             stageSecond: "Formatting USB",
             stageThird: "Upload bios-file on USB",
             stageForth: "Reboot PC",
