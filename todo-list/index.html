@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TO DO LIST</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="page">
+
+
+  <header class="header">
+    <div class="container">
+      <div class="card" id="app" v-cloak>
+        <div class="card__wrapper">
+          <h1>{{ title }}</h1>
+          <div class="card__form-control">
+            <input class="card__input " type="text" v-bind:placeholder="placeholderText" v-bind:value="inputValue"
+              v-on:input="inputChangeHendler" v-on:keypress.enter="addNewNote" />
+          </div>
+          <button class="btn btn--add" v-on:click="addNewNote">Добавить +</button>
+          <hr />
+          <ul class="card__list" v-if="notes.length !== 0">
+            <li class="card__list-item" v-for="(myNote, index) of notes">{{ myNote }}
+              <button class="btn btn--del" v-on:click="deleteNote(index)">Удалить</button>
+            </li>
+          </ul>
+          <h3 v-else="notes.length === 0">Ни один товар не указан. Пополните список.</h3>
+          <hr />
+          <div class="card__footer">
+            <h4 class="card__footer-text">
+              <em>Общее количество:</em> {{ notes.length }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn btn--fullscreen">GO FULL</button>
+  </header>
+
+  <footer>
+    <div class="footer">
+      <div class="container-large">
+        <div class="footer__social">
+          <img class="footer__img" src="./assets/img/github.svg" alt="">
+          <a class="footer__link footer__link_github" href="https://github.com/Fpsska" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+        <a class="footer__link footer__link_repo" href="#" target="_blank" rel="noopener noreferrer">repository</a> 
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="assets/js/main.js"></script>
+</div>
+</body>
+
+</html>
